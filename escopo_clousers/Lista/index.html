@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Teste Cofre Digital</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 30px; }
+            input, button { margin: 5px; }
+            .result { margin-top: 15px; color: blue; }
+        </style>
+    </head>
+
+    <body>
+        <h2>Cofre Digital</h2>
+        <div>
+            <h3>Depositar</h3>
+            <input type="number" id="depositoValor" placeholder="Valor">
+            <button onclick="depositar()">Depositar</button>
+        </div>
+        <div>
+            <h3>Sacar</h3>
+            <input type="password" id="saqueSenha" placeholder="Senha">
+            <input type="number" id="saqueValor" placeholder="Valor">
+            <button onclick="sacar()">Sacar</button>
+        </div>
+        <div>
+            <h3>Consultar Saldo</h3>
+            <input type="password" id="consultaSenha" placeholder="Senha">
+            <button onclick="consultarSaldo()">Consultar</button>
+        </div>
+        <div>
+            <h3>Alterar Senha</h3>
+            <input type="password" id="senhaAntiga" placeholder="Senha antiga">
+            <input type="password" id="senhaNova" placeholder="Nova senha">
+            <button onclick="alterarSenha()">Alterar</button>
+        </div>
+        <div class="result" id="resultado"></div>
+
+        
+        <script src="Cofre.js"></script>
+        <script>
+            function depositar() {
+                const valor = Number(document.getElementById('depositoValor').value);
+                document.getElementById('resultado').innerText = meuCofre.depositar(valor);
+            }
+            function sacar() {
+                const senha = document.getElementById('saqueSenha').value;
+                const valor = Number(document.getElementById('saqueValor').value);
+                document.getElementById('resultado').innerText = meuCofre.sacar(senha, valor);
+            }
+            function consultarSaldo() {
+                const senha = document.getElementById('consultaSenha').value;
+                document.getElementById('resultado').innerText = meuCofre.consultarSaldo(senha);
+            }
+            function alterarSenha() {
+                const antiga = document.getElementById('senhaAntiga').value;
+                const nova = document.getElementById('senhaNova').value;
+                document.getElementById('resultado').innerText = meuCofre.alterarSenha(antiga, nova);
+            }
+        </script>
+    </body>
+
+</html>
