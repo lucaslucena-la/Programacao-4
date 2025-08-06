@@ -1,0 +1,51 @@
+1. Qual das alternativas representa um seletor de classe valido?
+(A) p
+(B) #destaque
+(C) .destaque
+(D) destaque
+
+Resposta:
+Alternativa (C)
+
+2. Assinale a alternativa que indica corretamente a ordem de prioridade entre seletores,
+do mais forte para o mais fraco:
+(A) Classe > ID > Tipo
+(B) Tipo > Classe > ID
+(C) ID > Classe > Tipo
+(D) Inline > Tipo > ID
+
+Resposta:
+Alternativa (C)
+
+3. Suponha que um elemento HTML tenha um estilo definido por três regras conflitantes:
+•Uma regra de tipo: p {color: blue; }
+•Uma regra de classe: .mensagem {color: green; }
+•Uma regra de ID: #alerta {color: red; }
+
+Se o elemento tiver class="mensagem" e id="alerta", qual cor ser ́a aplicada ao
+texto? Justifique com base na especificidade dos seletores.
+
+Resposta: O elemento irá ser a cor vermelha, pois o seletor de ID tem maior prioridade diante ao seletor de classe e de tipo
+
+
+
+4. Um aluno escreveu o seguinte código CSS:
+
+.texto {
+font-size: 18px;
+    color: blue;
+}
+
+p {
+    color: green;
+}
+
+Sabendo que um elemento do tipo <p> tambem tem class="texto", qual ser ́a a cor
+final do texto?
+(A) Azul
+(B) Verde
+(C) Depende da ordem
+(D) N ̃ao ser ́a aplicada nenhuma cor
+
+Resposta:
+Alternativa (A)

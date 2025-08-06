@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div style="padding: 20px; max-width: 600px; margin: auto; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <h1 style="text-align: center; color: #333;">Formulário de Evento</h1>
+        <form action="#" method="post">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome Completo" required autofocus autocomplete="off" aria-required="true"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required autocomplete="off" aria-required="true"><br><br>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required autocomplete="off" aria-required="true"><br><br>
+
+            <label for="data_nascimento">Data de Nascimento:</label>
+            <input type="date" id="data_nascimento" name="data_nascimento" required aria-required="true"><br><br>
+
+            <label>Sexo:</label><br>
+            <input type="radio" id="sexoM" name="sexo" value="M" required aria-required="true">
+            <label for="sexoM">Masculino</label><br>
+            <input type="radio" id="sexoF" name="sexo" value="F" required aria-required="true">
+            <label for="sexoF">Feminino</label><br><br>
+
+            <label for="site_pessoal">Site Pessoal:</label>
+            <input type="url" id="site_pessoal" name="site_pessoal" placeholder="Site Pessoal"><br><br>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" placeholder="Senha" required autocomplete="off" aria-required="true"><br><br>
+
+            <label for="escolaridade">Escolaridade:</label>
+            <input list="escolaridades" id="escolaridade" name="escolaridade" placeholder="Escolaridade" required aria-required="true">
+            <datalist id="escolaridades">
+                <option value="Fundamental">
+                <option value="Médio">
+                <option value="Superior">
+                <option value="Pós-Graduação">
+            </datalist><br><br>
+
+            <label>Interesses:</label><br>
+            <input type="checkbox" id="interesseTecnologia" name="interesses" value="Tecnologia">
+            <label for="interesseTecnologia">Tecnologia</label><br>
+            <input type="checkbox" id="interesseEsportes" name="interesses" value="Esportes">
+            <label for="interesseEsportes">Esportes</label><br>
+            <input type="checkbox" id="interesseArtes" name="interesses" value="Artes">
+            <label for="interesseArtes">Artes</label><br>
+            <input type="checkbox" id="interesseMusica" name="interesses" value="Música">
+            <label for="interesseMusica">Música</label><br>
+            <input type="checkbox" id="interesseViagens" name="interesses" value="Viagens">
+            <label for="interesseViagens">Viagens</label><br><br>
+
+            <label for="horario_chegada">Horário de Chegada:</label>
+            <input type="time" id="horario_chegada" name="horario_chegada" required aria-required="true"><br><br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>

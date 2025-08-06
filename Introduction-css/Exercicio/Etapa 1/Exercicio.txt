@@ -1,0 +1,39 @@
+Verifica ̧c ̃ao de Aprendizagem
+1. Qual das formas abaixo representa a maneira mais recomendada de aplicar CSS em
+projetos profissionais?
+
+(A) Estilo inline
+(B) Estilo interno
+(C) Estilo externo
+(D) Nenhuma das anteriores
+
+Resposta:
+Alternativa (C): O mais recomendado é declarar o estilo externo para ter uma melhor organização.
+
+2. Qual das opções abaixo representa corretamente uma declaração CSS?
+
+(A) color = blue;
+(B) p(color: blue)
+(C) color: blue;
+(D) p.color: blue
+
+Resposta:
+Alternativa (C).
+
+3. A propriedade font-family serve para:
+(A) Mudar a cor da fonte
+(B) Definir o tamanho da fonte
+(C) Escolher o estilo de fonte do texto
+(D) Justificar o texto
+
+Resposta:
+Alternativa (C).
+
+4. A propriedade background-color pode receber valores como:
+(A) Apenas nomes de cores
+(B) Apenas valores em hexadecimal
+(C) Apenas códigos RGB
+(D) Todas as anteriores
+
+Resposta: 
+Alternativa (D).

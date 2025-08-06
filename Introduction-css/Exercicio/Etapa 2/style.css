@@ -1,0 +1,23 @@
+body {
+    background-color: #ffffff; /* azul muito claro */
+    margin: 40px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #004080; /* azul escuro */
+}
+
+h2{
+    color: rgb(0, 26, 255);
+}
+
+.destaque {
+    color: rgb(31, 205, 0);
+    font-weight: bold;
+}
+
+#aviso{
+    color: #ff0000; /* vermelho */
+    font-style: italic; /* itálico */
+}

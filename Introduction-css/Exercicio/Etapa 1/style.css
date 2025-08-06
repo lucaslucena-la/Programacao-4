@@ -1,0 +1,19 @@
+/* Define uma cor de fundo clara para a página */
+body {
+    background-color: #d3e3f0; /* azul muito claro */
+    margin: 40px;
+    font-family: Arial, sans-serif;
+}
+
+/* Define uma cor distinta para o cabeçalho */
+h1 {
+    color: #004080; /* azul escuro */
+}
+
+/* Define um estilo de fonte para o parágrafo */
+p {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: #f10f0f;
+    line-height: 1.6;
+}
