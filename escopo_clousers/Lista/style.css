@@ -1,0 +1,74 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  color: #222;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+h2 {
+  color: #0077b6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Seções */
+div {
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  border-left: 6px solid #0077b6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Títulos das seções */
+h3 {
+  color: #0077b6;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-right: 8px;
+  font-size: 16px;
+  width: auto;
+}
+
+/* Botões */
+button {
+  padding: 8px 16px;
+  background-color: #90be6d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #74a84a;
+}
+
+/* Resultado */
+.result {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e0f7fa;
+  color: #0077b6;
+  border-radius: 6px;
+  font-weight: bold;
+  border-left: 5px solid #0077b6;
+}
