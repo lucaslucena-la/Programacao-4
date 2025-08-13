@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Eventos de Rolagem</title>
+  <style>
+    #progress {
+      border-bottom: 5px solid green;
+      width: 0;
+      position: fixed;
+      top: 0; left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="progress"></div>
+  
+  <h2>Eventos de Rolagem</h2>
+  <p>Este exemplo desenha uma barra de progresso acima do documento e atualiza sua largura conforme você rola para baixo:</p>
+  
+  <pre><code>
+  &lt;style&gt;
+    #progress {
+      border-bottom: 2px solid blue;
+      width: 0;
+      position: fixed;
+      top: 0; left: 0;
+    }
+  &lt;/style&gt;
+  
+  &lt;div id="progress"&gt;&lt;/div&gt;
+  
+  &lt;script&gt;  
+    let bar = document.querySelector("#progress");
+    window.addEventListener("scroll", () =&gt; {
+      let max = document.body.scrollHeight - innerHeight;
+      bar.style.width = `${(pageYOffset / max) * 100}%`;
+    });
+  &lt;/script&gt;
+  </code></pre>
+  
+  <h2>Resumo dos Eventos de Rolagem</h2>
+  <ul>
+      <li><strong>Evento de Rolagem ("scroll")</strong>: Disparado quando um elemento é rolado.
+          <ul>
+              <li>Utilidades: Monitorar a visualização do usuário, exibir progresso, etc.</li>
+          </ul>
+      </li>
+      <li><strong>Exemplo</strong>: Barra de progresso fixa no topo da página, atualiza conforme você rola.
+          <ul>
+              <li><code>CSS</code>: <code>position: fixed</code> mantém a barra no topo.</li>
+              <li><code>Largura</code>: Ajustada em %, reflete o progresso da rolagem.</li>
+          </ul>
+      </li>
+      <li><strong>Cálculo da Largura</strong>:
+          <ul>
+              <li>Usa <code>innerHeight</code> e <code>pageYOffset</code> para calcular o progresso.</li>
+              <li>Dividindo <code>pageYOffset</code> pela altura total rolável, obtém-se a porcentagem da largura da barra.</li>
+          </ul>
+      </li>
+      <li><strong>Método <code>preventDefault</code></strong>: Não impede a rolagem, o evento é processado após a rolagem.</li>
+  </ul>
+</body>
+<script>
+    // Cria algum conteúdo
+    //document.body.appendChild(document.createTextNode(
+      //"supercalifragilisticexpialidocious ".repeat(1000)));
+
+    let bar = document.querySelector("#progress");
+    window.addEventListener("scroll", () => {
+      let max = document.body.scrollHeight - innerHeight;
+      bar.style.width = `${(pageYOffset / max) * 100}%`;
+    });
+  </script>
+</html>

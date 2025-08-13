@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Propagação de Eventos</title>
+</head>
+<body>
+
+  <h1>Propagação de Eventos</h1>
+  <ul>
+    <li>Para a maioria dos tipos de eventos, manipuladores registrados em nós com filhos também receberão eventos que ocorrem nos filhos.</li>
+    <li>Se um botão dentro de um parágrafo for clicado, os manipuladores de eventos no parágrafo também verão o evento de clique.</li>
+    <li>Se o parágrafo e o botão tiverem um manipulador, o manipulador mais específico—o do botão—é executado primeiro.</li>
+    <li>O evento é dito propagar-se para fora do nó onde ocorreu até o nó pai e assim por diante até a raiz do documento. Finalmente, após todos os manipuladores registrados em um nó específico terem tido sua vez, os manipuladores registrados no objeto window têm a chance de responder ao evento.</li>
+    <li>A qualquer momento, um manipulador de eventos pode chamar o método <code>stopPropagation</code> no objeto de evento para impedir que manipuladores mais acima recebam o evento.</li>
+  </ul>
+
+  <p>Um parágrafo com um <button>botão</button>.</p>
+
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  let para = document.querySelector("p");
+  let button = document.querySelector("button");
+  para.addEventListener("mousedown", () =&gt; {
+    alert("Manipulador para o parágrafo.");
+  });
+  button.addEventListener("mousedown", event =&gt; {
+    alert("Manipulador para o botão.");
+    if (event.button == 2) event.stopPropagation();
+  });
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    let para = document.querySelector("p");
+    let button = document.querySelector("button");
+    para.addEventListener("mousedown", () => {
+      alert("Manipulador para o parágrafo.");
+    });
+    button.addEventListener("mousedown", event => {
+      alert("Manipulador para o botão.");
+      if (event.button == 2) event.stopPropagation();
+    });
+  </script>
+
+  <ul>
+    <li>A maioria dos objetos de evento possui uma propriedade <code>target</code> que se refere ao nó onde o evento se originou.</li>
+    <li>Você pode usar essa propriedade para garantir que não está manipulando acidentalmente algo que se propagou de um nó que você não deseja manipular.</li>
+    <li>Também é possível usar a propriedade <code>target</code> para registrar um único manipulador para um tipo específico de evento. Por exemplo, se você tiver um nó contendo uma longa lista de botões, pode ser mais conveniente registrar um único manipulador de clique no nó externo e usá-lo para verificar se um botão foi clicado, em vez de registrar manipuladores individuais em todos os botões.</li>
+  </ul>
+
+  <h2>Exemplo Adicional:</h2>
+  <p>Este exemplo mostra como usar a propriedade <code>target</code> para identificar qual botão foi clicado.</p>
+  <button>A</button>
+  <button>B</button>
+  <button>C</button>
+
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  document.body.addEventListener("click", event =&gt; {
+    if (event.target.nodeName == "BUTTON") {
+        alert("Clicado "+event.target.textContent);
+    }
+  });
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    document.body.addEventListener("click", event => {
+      if (event.target.nodeName == "BUTTON") {
+        alert("Clicado "+event.target.textContent);
+      }
+    });
+  </script>
+
+</body>
+</html>

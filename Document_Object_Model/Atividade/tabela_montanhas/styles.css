@@ -1,0 +1,145 @@
+/* --- Layout básico --- */
+:root {
+  --bg: #0f172a;
+  /* fundo */
+  --text: #e5e7eb;
+  /* texto */
+  --muted: #9ca3af;
+  --border: #1f2937;
+  /* bordas da tabela */
+  --zebra: #0b1227;
+  /* linhas pares */
+  --focus: #22c55e;
+  /* foco de inputs */
+  --btn1: #16a34a;
+  /* botão */
+  --btn2: #15803d;
+  --error: #dc2626;
+  /* mensagens de erro */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  margin: 0 0 1rem;
+}
+
+/* --- Formulário --- */
+#mountainForm {
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: .75rem;
+  align-items:end;
+  margin: 1rem 0 1.25rem;
+}
+
+#mountainForm label {
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+#mountainForm input {
+  background: #0a1020;
+  border: 1px solid var(--border);
+  border-radius: .5rem;
+  color: var(--text);
+  padding: .6rem .7rem;
+  outline: none;
+}
+
+#mountainForm input:focus {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, .18);
+}
+
+#mountainForm button {
+  padding: .65rem 1rem;
+  border-radius: .5rem;
+  border: 1px solid #14532d;
+  background: linear-gradient(180deg, var(--btn1), var(--btn2));
+  color: #eafff2;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 10px;
+}
+
+#mountainForm button:hover {
+  filter: brightness(1.05);
+}
+
+/* --- Mensagem de erro abaixo do formulário --- */
+#errorMessage {
+  margin-top: .5rem;
+  color: var(--error);
+  /* texto em vermelho */
+  font-size: .95rem;
+  display: none;
+}
+
+#errorMessage.show {
+  display: block;
+}
+
+/* --- Tabela --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  /* permite borda contínua */
+  border: 1px solid var(--border);
+  /* borda externa da tabela */
+  border-radius: .6rem;
+  overflow: hidden;
+  /* mantém raios nas bordas */
+}
+
+/* cabeçalho */
+thead th {
+  text-align: left;
+  background: #0c1530;
+  color: #dbeafe;
+  padding: .75rem;
+  /* padding para legibilidade */
+  border-bottom: 1px solid var(--border);
+  letter-spacing: .02em;
+}
+
+/* células do corpo */
+tbody td {
+  padding: .65rem .75rem;
+  /* padding para legibilidade */
+  border-bottom: 1px solid var(--border);
+  /* borda horizontal */
+  border-right: 1px solid var(--border);
+  /* borda vertical */
+}
+
+tbody tr td:last-child {
+  border-right: none;
+}
+
+/* tira a última borda à direita */
+
+/* zebra (linhas pares) */
+tbody tr:nth-child(even) {
+  background: var(--zebra);
+}
+
+/* alinhar números à direita */
+td.numeric {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

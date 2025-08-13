@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Montanhas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <main class="container">
+        <h1>Montanhas</h1>
+
+        <!-- onde a tabela será exibida -->
+        <div id="mountains" aria-live="polite"></div>
+
+        <!-- formulário -->
+        <form id="mountainForm" autocomplete="off">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="altura">Altura (m):</label>
+            <input type="number" id="altura" name="altura" required>
+
+            <label for="local">Local:</label>
+            <input type="text" id="local" name="local" required>
+
+            <button id="btnAdd" type="submit">Adicionar Montanha</button>
+        </form>
+
+        <!-- mensagem de erro em HTML -->
+        <div id="errorMessage" role="alert" aria-live="assertive"></div>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

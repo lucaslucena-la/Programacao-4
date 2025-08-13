@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos e Nós do DOM</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h1>Eventos e Nós do DOM</h1>
+  <ul>
+    <li>Cada manipulador de eventos no navegador é registrado em um contexto específico.</li>
+    <li>No exemplo anterior, usamos <code>addEventListener</code> no objeto <code>window</code> para registrar um manipulador para toda a janela.</li>
+    <li>O método <code>addEventListener</code> também pode ser encontrado em elementos do DOM e outros tipos de objetos.</li>
+    <li>Os ouvintes de eventos (event listeners) são chamados apenas quando o evento ocorre no contexto do objeto no qual estão registrados.</li>
+  </ul>
+
+  <button id="b1">Clique em mim</button>
+
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  let b1 = document.getElementById("b1");
+  b1.addEventListener("click", () =&gt; {
+    console.log("Botão clicado.");
+  });
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    let b1 = document.getElementById("b1");
+    b1.addEventListener("click", () => {
+      alert("Botão clicado.");
+    });
+  </script>
+
+  <ul>
+    <li>O exemplo acima anexa um manipulador ao nó do botão. Cliques no botão fazem com que esse manipulador seja executado, mas cliques no restante do documento não.</li>
+    <li>Atribuir um atributo <code>onclick</code> a um nó tem um efeito semelhante e funciona para a maioria dos tipos de eventos.</li>
+    <li>Você pode anexar um manipulador através do atributo, cujo nome é o nome do evento com "on" na frente.</li>
+    <pre><code>
+        &lt;button onclick="alert('Botão clicado com onclick!')"&gt;Clique em mim&lt;/button&gt;
+    </code></pre>
+    <li>Entretanto, um nó pode ter apenas um atributo <code>onclick</code>, permitindo registrar apenas um manipulador por nó dessa maneira.</li>
+    <li>O método <code>addEventListener</code> permite adicionar qualquer número de manipuladores, ou seja, é seguro adicionar manipuladores mesmo que já exista outro no elemento.</li>
+    <li>O método <code>removeEventListener</code>, chamado com argumentos semelhantes a <code>addEventListener</code>, remove um manipulador.</li>
+  </ul>
+
+  <button id="b2">Botão de ação única</button>
+
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  let b2 = document.getElementById("b2");
+  function once() {
+    console.log("Feito.");
+    b2.removeEventListener("click", once);
+  }
+  b2.addEventListener("click", once);
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    let b2 = document.getElementById("b2");
+    function once() {
+      alert("Feito.");
+      b2.removeEventListener("click", once);
+    }
+    b2.addEventListener("click", once);
+  </script>
+
+  <ul>
+    <li>A função passada para <code>removeEventListener</code> deve ser a mesma que foi passada para <code>addEventListener</code>.</li>
+    <li>Quando você precisar desregistrar um manipulador, dê um nome à função manipuladora (como <code>once</code> no exemplo) para poder passar o mesmo valor de função para ambos os métodos.</li>
+  </ul>
+
+</body>
+</html>

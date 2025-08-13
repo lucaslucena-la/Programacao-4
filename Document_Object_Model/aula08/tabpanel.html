@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Panel</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="w3-bar w3-black">
+        <button class="w3-bar-item w3-button" onclick="asTabs('one')">Tab one</button>
+        <button class="w3-bar-item w3-button" onclick="asTabs('two')">Tab two</button>
+        <button class="w3-bar-item w3-button" onclick="asTabs('three')">Tab three</button>
+      </div>
+    <tab-panel>
+        <div id="one" class="tab">
+            <h2>Título Tab1</h2>
+            <p>Texto Tab 1</p>
+        </div>
+        <div id="two" style="display:none" class="tab">
+            <h2>Título Tab 2</h2>
+            <p>Texto Tab 2</p>
+        </div>
+        <div id="three" style="display:none" class="tab">
+            <h2>Título Tab 3</h2>
+            <p>Texto Tab 3</p>
+        </div>
+    </tab-panel>
+    
+</body>
+<script>
+    function asTabs(node) {
+      let tabs = document.getElementsByClassName('tab');
+      for(let i=0; i<tabs.length;i++){
+        tabs[i].style.display = 'none';
+      }
+      document.getElementById(node).style.display = 'block';
+    }
+    //asTabs(document.querySelector("tab-panel"));
+  </script>
+</html>

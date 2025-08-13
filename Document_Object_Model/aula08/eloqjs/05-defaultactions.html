@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Propagação de Eventos</title>
+</head>
+<body>
+
+    <h1>Ações Padrão</h1>
+    <ul>
+      <li>Muitos eventos têm uma ação padrão. Se você clicar em um link, será levado ao destino do link. Se você pressionar a seta para baixo, o navegador rolará a página para baixo. Se você clicar com o botão direito, receberá um menu de contexto. E assim por diante.</li>
+      <li>Para a maioria dos tipos de eventos, os manipuladores de eventos em JavaScript são chamados antes que o comportamento padrão ocorra. Se o manipulador não quiser que esse comportamento normal aconteça, geralmente porque já cuidou de lidar com o evento, ele pode chamar o método <code>preventDefault</code> no objeto de evento.</li>
+      <li>Isso pode ser usado para implementar seus próprios atalhos de teclado ou menu de contexto. Também pode ser usado para interferir de maneira incômoda no comportamento que os usuários esperam. Por exemplo, aqui está um link que não pode ser seguido:</li>
+    </ul>
+  
+    <a href="https://developer.mozilla.org/">MDN</a>
+    
+    <h2>Código do Script:</h2>
+    <pre><code>
+  &lt;script&gt;
+    let link = document.querySelector("a");
+    link.addEventListener("click", event =&gt; {
+      alert("Não.");
+      event.preventDefault();
+    });
+  &lt;/script&gt;
+    </code></pre>
+  
+    <script>
+      let link = document.querySelector("a");
+      link.addEventListener("click", event => {
+        alert("Não.");
+        event.preventDefault();
+      });
+    </script>
+  
+    <ul>
+      <li>Tente não fazer tais coisas sem uma razão realmente boa. Será desagradável para as pessoas que usam sua página quando o comportamento esperado é quebrado.</li>
+      <li>Dependendo do navegador, alguns eventos não podem ser interceptados de forma alguma. No Chrome, por exemplo, o atalho de teclado para fechar a guia atual (ctrl-W ou command-W) não pode ser tratado pelo JavaScript.</li>
+    </ul>
+  
+  </body>
+</html>

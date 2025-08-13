@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos de Foco</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      color: #333;
+      text-align: center;
+    }
+
+    ul {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      list-style-type: disc;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #333;
+      text-align: center;
+    }
+
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 1em;
+      color: #66d9ef;
+    }
+
+    a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Eventos de Foco</h1>
+  <ul>
+    <li>Quando um elemento recebe foco, o navegador dispara um evento <code>"focus"</code>. Quando o foco é perdido, o evento <code>"blur"</code> é disparado.</li>
+    <li>Esses eventos não se propagam. Um manipulador no elemento pai não é notificado quando um elemento filho ganha ou perde foco.</li>
+    <li>O exemplo a seguir exibe um texto de ajuda para o campo de texto que está com foco:</li>
+  </ul>
+
+  <p>Nome: <input type="text" data-help="Seu nome completo"></p>
+  <p>Idade: <input type="text" data-help="Sua idade em anos"></p>
+  <p id="help"></p>
+
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  let help = document.querySelector("#help");
+  let fields = document.querySelectorAll("input");
+  for (let field of Array.from(fields)) {
+    field.addEventListener("focus", event =&gt; {
+      let text = event.target.getAttribute("data-help");
+      help.textContent = text;
+    });
+    field.addEventListener("blur", event =&gt; {
+      help.textContent = "";
+    });
+  }
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    let help = document.querySelector("#help");
+    let fields = document.querySelectorAll("input");
+    for (let field of Array.from(fields)) {
+      field.addEventListener("focus", event => {
+        let text = event.target.getAttribute("data-help");
+        help.textContent = text;
+      });
+      field.addEventListener("blur", event => {
+        help.textContent = "";
+      });
+    }
+  </script>
+
+  <ul>
+    <li>O objeto <code>window</code> também recebe eventos <code>"focus"</code> e <code>"blur"</code> quando o usuário alterna entre abas ou janelas do navegador.</li>
+  </ul>
+
+</body>
+</html>

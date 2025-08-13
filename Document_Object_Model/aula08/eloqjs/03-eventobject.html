@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetos de Evento</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h1>Objetos de Evento</h1>
+  <ul>
+    <li>Embora não tenhamos abordado isso até agora, funções manipuladoras de eventos recebem um argumento: o objeto de evento.</li>
+    <li>Este objeto contém informações adicionais sobre o evento.</li>
+    <li>Por exemplo, para saber qual botão do mouse foi pressionado, podemos verificar a propriedade <code>button</code> do objeto de evento.</li>
+  </ul>
+
+  <button>Clique em mim de qualquer forma</button>
+
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  let button = document.querySelector("button");
+  button.addEventListener("mousedown", event =&gt; {
+    if (event.button == 0) {
+      alert("Botão esquerdo");
+    } else if (event.button == 1) {
+      alert("Botão do meio");
+    } else if (event.button == 2) {
+      alert("Botão direito");
+    }
+  });
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    let button = document.querySelector("button");
+    button.addEventListener("mousedown", event => {
+      if (event.button == 0) {
+        alert("Botão esquerdo");
+      } else if (event.button == 1) {
+        alert("Botão do meio");
+      } else if (event.button == 2) {
+        alert("Botão direito");
+      }
+    });
+  </script>
+
+  <ul>
+    <li>A informação armazenada em um objeto de evento varia conforme o tipo de evento.</li>
+    <li>A propriedade <code>type</code> do objeto sempre contém uma string que identifica o evento (como "click" ou "mousedown").</li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 1 - Objeto Window</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Resumo: Manipuladores de Eventos</h1>
+    <ul>
+      <li>Interface básica exige leitura constante do estado das teclas para capturar eventos.</li>
+      <li>Máquinas primitivas usam essa abordagem, mas é ineficiente e arriscada.</li>
+      <li>Uma melhoria é o sistema operacional ou hardware colocar eventos em uma fila para serem processados.</li>
+      <li>Essa técnica, chamada de polling (consulta), pode tornar o software pouco responsivo.</li>
+      <li>Mecanismo preferido: o sistema notifica ativamente o código quando um evento ocorre.</li>
+      <li>Navegadores permitem registrar funções como manipuladores para eventos específicos.</li>
+    </ul>
+    
+    <p>Clique neste documento para ativar o manipulador.</p>
+  
+    <h2>Código do Script:</h2>
+    <pre><code>
+  &lt;script&gt;
+    window.addEventListener("click", () =&gt; {
+      console.log("Você chamou?");
+    });
+  &lt;/script&gt;
+    </code></pre>
+</body>
+<script>
+    window.addEventListener("click", () => {
+      alert("Clicou?");
+    });
+  </script>
+</html>

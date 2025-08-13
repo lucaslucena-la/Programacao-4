@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Eventos de Teclado</title>
+</head>
+<body>
+
+  <h1>Eventos de Teclado</h1>
+  <ul>
+    <li>Quando uma tecla do teclado é pressionada, o navegador dispara um evento <code>"keydown"</code>. Quando a tecla é liberada, você recebe um evento <code>"keyup"</code>.</li>
+    <li>O evento <code>"keydown"</code> é disparado não apenas quando a tecla é fisicamente pressionada, mas também toda vez que a tecla se repete enquanto é mantida pressionada. Isso pode causar problemas, como adicionar múltiplos elementos se uma tecla for pressionada por muito tempo.</li>
+    <li>O exemplo a seguir altera a cor de fundo da página para violeta quando a tecla "v" é pressionada e a reverte quando a tecla é liberada:</li>
+  </ul>
+
+  <p>Esta página fica violeta quando você mantém a tecla V pressionada.</p>
+  
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  window.addEventListener("keydown", event =&gt; {
+    if (event.key == "v") {
+      document.body.style.background = "violet";
+    }
+  });
+  window.addEventListener("keyup", event =&gt; {
+    if (event.key == "v") {
+      document.body.style.background = "";
+    }
+  });
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    window.addEventListener("keydown", event => {
+      if (event.key == "v") {
+        document.body.style.background = "violet";
+      }
+    });
+    window.addEventListener("keyup", event => {
+      if (event.key == "v") {
+        document.body.style.background = "";
+      }
+    });
+  </script>
+
+  <ul>
+    <li>O nome da tecla é acessado pela propriedade <code>key</code> do objeto de evento. Essa propriedade armazena uma string que, para a maioria das teclas, corresponde ao que a tecla digitaria. Teclas especiais como enter têm strings específicas como "Enter".</li>
+    <li>Teclas modificadoras como shift, ctrl, alt e meta (command no Mac) também geram eventos de tecla. Você pode verificar se essas teclas estão pressionadas usando as propriedades <code>shiftKey</code>, <code>ctrlKey</code>, <code>altKey</code> e <code>metaKey</code>.</li>
+    <li>Quando o usuário digita texto, usar eventos de tecla para determinar o que está sendo digitado pode ser problemático, especialmente com softwares de edição de método de entrada (IME) que combinam múltiplas teclas para criar caracteres.</li>
+    <li>Para detectar quando algo foi digitado, elementos que podem receber entrada, como <code>&lt;input&gt;</code> e <code>&lt;textarea&gt;</code>, disparam eventos <code>"input"</code> sempre que o conteúdo é alterado.</li>
+    <pre><code>
+        &lt;label for="textInput"&gt;Digite algo:&lt;/label&gt;
+        &lt;input type="text" id="textInput"&gt;
+        &lt;p id="output"&gt;&lt;/p&gt;
+        
+        &lt;script&gt;
+          const input = document.getElementById('textInput');
+          const output = document.getElementById('output');
+        
+          input.addEventListener('input', () =&gt; {
+            output.textContent = `Você digitou: ${input.value}`;
+          });
+        &lt;/script&gt;
+        </code></pre>
+  </ul>
+
+  <p>Pressione Control-Espaço para continuar.</p>
+  
+  <h2>Código do Script:</h2>
+  <pre><code>
+&lt;script&gt;
+  window.addEventListener("keydown", event =&gt; {
+    if (event.key == " " && event.ctrlKey) {
+      alert("Continuando!");
+    }
+  });
+&lt;/script&gt;
+  </code></pre>
+
+  <script>
+    window.addEventListener("keydown", event => {
+      if (event.key == " " && event.ctrlKey) {
+        alert("Continuando!");
+      }
+    });
+  </script>
+
+</body>
+</html>
