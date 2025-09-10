@@ -1,0 +1,16 @@
+{% extends "base.html"%}
+{% import "bootstrap5/form.html" as wtf %} 
+{%block title%}Flask Formulários {%endblock%}
+{%block page_content%}
+<h1>Hello, {%if name %} {{name}} {%else%} Stranger {%endif%}</h1>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+    {{ form.name.label }} {{ form.name(class='form-control') }}
+    </div>
+    <div class="form-group">
+    {{ form.gender.label }} {{ form.gender(class='form-control') }}
+    </div>
+    {{ form.submit() }}
+</form>
+{%endblock%}

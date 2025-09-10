@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Cadastrar Novo Produto</h2>
+    <form action="{{ url_for('cadastrar') }}" method="post">
+        <label for="nome_produto">Nome do Produto:</label><br>
+        <input type="text" id="nome_produto" name="nome_produto" required><br><br>
+        
+        <label for="marca_produto">Marca:</label><br>
+        <input type="text" id="marca_produto" name="marca_produto" required><br><br>
+        
+        <label for="valor_produto">Valor:</label><br>
+        <input type="number" id="valor_produto" name="valor_produto" step="0.01" required><br><br>
+        
+        <button type="submit">Cadastrar Produto</button>
+    </form>
+{% endblock %}
